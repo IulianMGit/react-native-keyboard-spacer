@@ -57,7 +57,6 @@ export default class KeyboardSpacer extends Component {
     this.updateKeyboardSpace = this.updateKeyboardSpace.bind(this);
     this.resetKeyboardSpace = this.resetKeyboardSpace.bind(this);
   }
-
   componentDidMount() {
     const updateListener = Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow';
     const resetListener = Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
@@ -84,7 +83,7 @@ export default class KeyboardSpacer extends Component {
         LayoutAnimation.Properties.opacity,
       );
     }
-    LayoutAnimation.configureNext(animationConfig);
+    // LayoutAnimation.configureNext(animationConfig);
 
     // get updated on rotation
     const screenHeight = Dimensions.get('window').height;
@@ -107,7 +106,7 @@ export default class KeyboardSpacer extends Component {
         LayoutAnimation.Properties.opacity,
       );
     }
-    LayoutAnimation.configureNext(animationConfig);
+    // LayoutAnimation.configureNext(animationConfig);
 
     this.setState({
       keyboardSpace: 0,
